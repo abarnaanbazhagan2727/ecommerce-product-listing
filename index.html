@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ShopSphere - Modern responsive eCommerce product catalog featuring Electronics, Clothing, and Accessories.">
+  <title>ShopSphere | Modern eCommerce Experience</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- FontAwesome Icons for modern UI symbols -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Top Announcement Bar -->
+  <div class="announcement-bar">
+    <div class="container announcement-content">
+      <span><i class="fa-solid fa-bolt"></i> Spring Flash Sale: Up to 40% off top categories!</span>
+      <span class="announcement-badge">Free shipping on orders over $50</span>
+    </div>
+  </div>
+
+  <!-- Navigation Bar -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="#home" class="brand-logo" id="brand-logo">
+        <span class="logo-icon"><i class="fa-solid fa-bag-shopping"></i></span>
+        <span class="logo-text">Shop<strong>Sphere</strong></span>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="nav-links" id="nav-links">
+        <a href="#home" class="nav-link active" data-nav="home"><i class="fa-solid fa-house"></i> Home</a>
+        <a href="#categories" class="nav-link" data-nav="categories"><i class="fa-solid fa-shapes"></i> Categories</a>
+        <a href="#products-section" class="nav-link" data-nav="products"><i class="fa-solid fa-grid-2"></i> All Products</a>
+      </nav>
+
+      <!-- Nav Actions (Search, Cart, Menu Toggle) -->
+      <div class="nav-actions">
+        <div class="nav-search-wrapper">
+          <i class="fa-solid fa-magnifying-glass search-icon"></i>
+          <input type="text" id="global-search" placeholder="Search products..." aria-label="Search products">
+          <button id="clear-search-btn" class="clear-search-btn" title="Clear search" aria-label="Clear search">&times;</button>
+        </div>
+
+        <button class="cart-trigger-btn" id="open-cart-btn" aria-label="View Shopping Cart">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span class="cart-count-badge" id="cart-count-badge">0</span>
+          <span class="cart-label">Cart</span>
+        </button>
+
+        <button class="mobile-menu-btn" id="mobile-menu-toggle" aria-label="Toggle mobile navigation">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Drawer -->
+  <div class="mobile-nav-drawer" id="mobile-nav-drawer">
+    <div class="mobile-nav-header">
+      <span class="logo-text">Shop<strong>Sphere</strong></span>
+      <button class="close-mobile-nav" id="close-mobile-nav-btn">&times;</button>
+    </div>
+    <div class="mobile-nav-links">
+      <a href="#home" class="mobile-nav-link active" data-nav="home"><i class="fa-solid fa-house"></i> Home</a>
+      <a href="#categories" class="mobile-nav-link" data-nav="categories"><i class="fa-solid fa-shapes"></i> Categories</a>
+      <a href="#products-section" class="mobile-nav-link" data-nav="products"><i class="fa-solid fa-cube"></i> All Products</a>
+      <a href="#cart" class="mobile-nav-link" id="mobile-cart-link"><i class="fa-solid fa-cart-shopping"></i> View Cart (<span id="mobile-cart-count">0</span>)</a>
+    </div>
+  </div>
+  <div class="mobile-nav-backdrop" id="mobile-nav-backdrop"></div>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Hero Section -->
+    <section class="hero-section" id="home">
+      <div class="container hero-container">
+        <div class="hero-content">
+          <div class="hero-tag">
+            <i class="fa-solid fa-sparkles"></i> Curated Premium Collection
+          </div>
+          <h1 class="hero-title">Elevate Your Lifestyle With Next-Gen Essentials</h1>
+          <p class="hero-description">
+            Discover hand-crafted electronics, versatile seasonal clothing, and timeless accessories tailored for everyday excellence.
+          </p>
+          <div class="hero-cta-group">
+            <a href="#products-section" class="btn btn-primary btn-lg" id="shop-now-btn">
+              <span>Explore Catalog</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+            <a href="#categories" class="btn btn-secondary btn-lg">
+              <span>Browse Categories</span>
+            </a>
+          </div>
+          <div class="hero-highlights">
+            <div class="highlight-item">
+              <span class="highlight-number">18+</span>
+              <span class="highlight-label">Premium Items</span>
+            </div>
+            <div class="highlight-divider"></div>
+            <div class="highlight-item">
+              <span class="highlight-number">4.9★</span>
+              <span class="highlight-label">Customer Rating</span>
+            </div>
+            <div class="highlight-divider"></div>
+            <div class="highlight-item">
+              <span class="highlight-number">100%</span>
+              <span class="highlight-label">Authentic Guarantee</span>
+            </div>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="hero-card-stack">
+            <div class="hero-image-wrapper">
+              <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800&q=80" alt="Premium Wireless Headphones" class="hero-img">
+              <div class="floating-deal-badge">
+                <span class="deal-tag">Featured Pick</span>
+                <span class="deal-name">Aura Bass Pro</span>
+                <span class="deal-price">$249.99</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Category Showcase Section -->
+    <section class="categories-section" id="categories">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge">Discover</span>
+          <h2 class="section-title">Shop by Category</h2>
+          <p class="section-subtitle">Explore our hand-picked selections across three distinct departments</p>
+        </div>
+
+        <div class="category-grid">
+          <!-- Electronics Category Card -->
+          <div class="category-card" data-category="Electronics" id="cat-card-electronics">
+            <div class="category-bg-image" style="background-image: url('https://images.unsplash.com/photo-1550009158-9ebf69173e03?w=600&q=80');"></div>
+            <div class="category-overlay"></div>
+            <div class="category-info">
+              <div class="category-icon"><i class="fa-solid fa-laptop"></i></div>
+              <h3 class="category-name">Electronics</h3>
+              <p class="category-desc">Audio, wearables, smart gear & high-tech gadgets</p>
+              <button class="category-btn" onclick="filterByCategory('Electronics')">
+                View Electronics <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Clothing Category Card -->
+          <div class="category-card" data-category="Clothing" id="cat-card-clothing">
+            <div class="category-bg-image" style="background-image: url('https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?w=600&q=80');"></div>
+            <div class="category-overlay"></div>
+            <div class="category-info">
+              <div class="category-icon"><i class="fa-solid fa-shirt"></i></div>
+              <h3 class="category-name">Clothing</h3>
+              <p class="category-desc">Contemporary streetwear, outerwear & everyday comfort</p>
+              <button class="category-btn" onclick="filterByCategory('Clothing')">
+                View Clothing <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Accessories Category Card -->
+          <div class="category-card" data-category="Accessories" id="cat-card-accessories">
+            <div class="category-bg-image" style="background-image: url('https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600&q=80');"></div>
+            <div class="category-overlay"></div>
+            <div class="category-info">
+              <div class="category-icon"><i class="fa-solid fa-glasses"></i></div>
+              <h3 class="category-name">Accessories</h3>
+              <p class="category-desc">Luxury watches, leather packs & signature eyewear</p>
+              <button class="category-btn" onclick="filterByCategory('Accessories')">
+                View Accessories <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Products Listing Section -->
+    <section class="products-section" id="products-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge">Catalogue</span>
+          <h2 class="section-title">Explore All Products</h2>
+          <p class="section-subtitle">Filter by category or price to find exactly what you love</p>
+        </div>
+
+        <!-- Filter Controls Container -->
+        <div class="filters-panel" id="filters-panel">
+          <div class="filters-row-top">
+            <!-- Category Filter Pills -->
+            <div class="category-filters-group" id="category-pills">
+              <button class="filter-pill active" data-category="all" id="pill-all">All Items</button>
+              <button class="filter-pill" data-category="Electronics" id="pill-electronics">
+                <i class="fa-solid fa-laptop"></i> Electronics
+              </button>
+              <button class="filter-pill" data-category="Clothing" id="pill-clothing">
+                <i class="fa-solid fa-shirt"></i> Clothing
+              </button>
+              <button class="filter-pill" data-category="Accessories" id="pill-accessories">
+                <i class="fa-solid fa-glasses"></i> Accessories
+              </button>
+            </div>
+
+            <!-- Sort By Select -->
+            <div class="sort-group">
+              <label for="sort-select"><i class="fa-solid fa-arrow-down-short-wide"></i> Sort By:</label>
+              <select id="sort-select" class="form-select">
+                <option value="featured">Featured</option>
+                <option value="price-low">Price: Low to High</option>
+                <option value="price-high">Price: High to Low</option>
+                <option value="rating">Top Rated</option>
+                <option value="name-asc">Name: A to Z</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="filters-row-bottom">
+            <!-- Price Range Filter -->
+            <div class="price-filter-card">
+              <div class="price-filter-header">
+                <span class="filter-label"><i class="fa-solid fa-sliders"></i> Price Range</span>
+                <span class="price-display-range" id="price-display-range">$0 – $1,000</span>
+              </div>
+              <div class="price-inputs-wrapper">
+                <div class="input-with-symbol">
+                  <span class="currency-symbol">$</span>
+                  <input type="number" id="min-price-input" min="0" max="1000" placeholder="Min" aria-label="Minimum price">
+                </div>
+                <span class="price-separator">to</span>
+                <div class="input-with-symbol">
+                  <span class="currency-symbol">$</span>
+                  <input type="number" id="max-price-input" min="0" max="1000" placeholder="Max" aria-label="Maximum price">
+                </div>
+                <button class="btn btn-apply-filter" id="apply-price-btn">Apply</button>
+              </div>
+            </div>
+
+            <!-- Active Filter Status & Reset -->
+            <div class="filter-actions-wrapper">
+              <div class="active-summary" id="active-summary">
+                Showing <strong id="product-count-display">18</strong> products
+              </div>
+              <button class="btn btn-outline btn-sm" id="reset-filters-btn">
+                <i class="fa-solid fa-rotate-left"></i> Reset Filters
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dynamic Product Grid -->
+        <div class="product-grid" id="product-grid" aria-live="polite">
+          <!-- Rendered dynamically by script.js -->
+        </div>
+
+        <!-- Empty State (Hidden by default) -->
+        <div class="empty-state" id="empty-state" style="display: none;">
+          <div class="empty-icon"><i class="fa-solid fa-box-open"></i></div>
+          <h3>No matching products found</h3>
+          <p>We couldn't find any products matching your current filters and search criteria.</p>
+          <button class="btn btn-primary" id="empty-reset-btn">Reset All Filters</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Benefits / Trust Banner -->
+    <section class="trust-banner">
+      <div class="container trust-grid">
+        <div class="trust-item">
+          <div class="trust-icon"><i class="fa-solid fa-truck-fast"></i></div>
+          <div>
+            <h4>Fast & Free Delivery</h4>
+            <p>Complimentary shipping on orders above $50</p>
+          </div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon"><i class="fa-solid fa-shield-halved"></i></div>
+          <div>
+            <h4>Buyer Protection</h4>
+            <p>100% money-back guarantee within 30 days</p>
+          </div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon"><i class="fa-solid fa-headset"></i></div>
+          <div>
+            <h4>24/7 Dedicated Support</h4>
+            <p>Our concierge team is always here to assist</p>
+          </div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon"><i class="fa-solid fa-arrows-rotate"></i></div>
+          <div>
+            <h4>Hassle-Free Returns</h4>
+            <p>Simple and instant prepaid return policy</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Product Details Modal -->
+  <div class="modal-overlay" id="product-modal" aria-hidden="true" role="dialog" aria-labelledby="modal-product-title">
+    <div class="modal-card">
+      <button class="modal-close-btn" id="modal-close-btn" aria-label="Close product details">&times;</button>
+      <div class="modal-grid">
+        <!-- Modal Left: Product Image -->
+        <div class="modal-image-col">
+          <div class="modal-badge-container">
+            <span class="modal-category-badge" id="modal-category">Category</span>
+            <span class="modal-stock-badge"><i class="fa-solid fa-check"></i> In Stock</span>
+          </div>
+          <div class="modal-image-wrapper">
+            <img src="" alt="Product Detail" id="modal-image" class="modal-img">
+          </div>
+        </div>
+
+        <!-- Modal Right: Product Info -->
+        <div class="modal-info-col">
+          <h2 class="modal-title" id="modal-title">Product Name</h2>
+          
+          <div class="modal-meta-row">
+            <div class="modal-rating" id="modal-rating">
+              <span class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i></span>
+              <span class="rating-val" id="modal-rating-val">4.8</span>
+              <span class="rating-count" id="modal-reviews-count">(128 reviews)</span>
+            </div>
+            <span class="modal-sku" id="modal-sku">SKU: SP-001</span>
+          </div>
+
+          <div class="modal-price-row">
+            <span class="modal-current-price" id="modal-price">$0.00</span>
+            <span class="modal-original-price" id="modal-original-price">$0.00</span>
+            <span class="modal-discount-tag" id="modal-discount-tag">Save 20%</span>
+          </div>
+
+          <div class="modal-desc-section">
+            <h4 class="modal-section-label">Description</h4>
+            <p class="modal-description" id="modal-description">Detailed product description goes here.</p>
+          </div>
+
+          <div class="modal-features-section">
+            <h4 class="modal-section-label">Highlights</h4>
+            <ul class="modal-features-list" id="modal-features-list">
+              <!-- Dynamically populated -->
+            </ul>
+          </div>
+
+          <!-- Quantity Stepper & Add to Cart -->
+          <div class="modal-actions-container">
+            <div class="quantity-control-group">
+              <span class="qty-label">Quantity:</span>
+              <div class="qty-stepper">
+                <button type="button" class="stepper-btn" id="modal-qty-minus" aria-label="Decrease quantity">
+                  <i class="fa-solid fa-minus"></i>
+                </button>
+                <input type="number" id="modal-qty-input" value="1" min="1" max="99" readonly>
+                <button type="button" class="stepper-btn" id="modal-qty-plus" aria-label="Increase quantity">
+                  <i class="fa-solid fa-plus"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="modal-btn-row">
+              <button class="btn btn-primary btn-lg btn-modal-cart" id="modal-add-to-cart-btn">
+                <i class="fa-solid fa-cart-plus"></i>
+                <span>Add to Cart</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Shopping Cart Slide-Over Drawer -->
+  <div class="cart-drawer-overlay" id="cart-drawer-overlay"></div>
+  <aside class="cart-drawer" id="cart-drawer" aria-label="Shopping Cart">
+    <div class="cart-drawer-header">
+      <div class="cart-header-title">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <h3>Your Shopping Cart</h3>
+        <span class="cart-header-pill" id="cart-drawer-count">0 items</span>
+      </div>
+      <button class="cart-close-btn" id="close-cart-btn" aria-label="Close cart">&times;</button>
+    </div>
+
+    <!-- Cart Body -->
+    <div class="cart-drawer-body" id="cart-drawer-body">
+      <!-- Empty Cart State -->
+      <div class="cart-empty-state" id="cart-empty-state">
+        <div class="cart-empty-icon"><i class="fa-solid fa-bag-shopping"></i></div>
+        <h4>Your cart is empty</h4>
+        <p>Explore our trending catalog and add items to your cart.</p>
+        <button class="btn btn-primary btn-sm" id="cart-start-shopping-btn">Explore Products</button>
+      </div>
+
+      <!-- Cart Item List -->
+      <div class="cart-items-list" id="cart-items-list">
+        <!-- Rendered dynamically -->
+      </div>
+    </div>
+
+    <!-- Cart Drawer Footer (Only visible when items exist) -->
+    <div class="cart-drawer-footer" id="cart-drawer-footer">
+      <div class="cart-subtotal-row">
+        <span>Subtotal</span>
+        <strong id="cart-subtotal-price">$0.00</strong>
+      </div>
+      <div class="cart-shipping-row">
+        <span>Estimated Shipping</span>
+        <span class="free-shipping-tag" id="cart-shipping-status">FREE</span>
+      </div>
+      <div class="cart-total-row">
+        <span>Grand Total</span>
+        <span class="cart-grand-total" id="cart-grand-total">$0.00</span>
+      </div>
+
+      <div class="cart-checkout-actions">
+        <button class="btn btn-primary btn-block btn-checkout" id="checkout-btn">
+          <span>Proceed to Checkout</span>
+          <i class="fa-solid fa-arrow-right"></i>
+        </button>
+        <button class="btn btn-outline btn-block btn-clear-cart" id="clear-cart-btn">
+          <i class="fa-solid fa-trash-can"></i> Clear Cart
+        </button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Checkout Success Modal -->
+  <div class="modal-overlay" id="checkout-modal" aria-hidden="true">
+    <div class="modal-card checkout-success-card">
+      <div class="checkout-icon-success">
+        <i class="fa-solid fa-circle-check"></i>
+      </div>
+      <h2>Order Placed Successfully!</h2>
+      <p class="checkout-order-number">Order reference: <strong id="order-reference-id">#SP-94812</strong></p>
+      <div class="checkout-summary-box" id="checkout-summary-box">
+        <!-- Dynamic order breakdown -->
+      </div>
+      <p class="checkout-thank-you">Thank you for testing the ShopSphere store. Your simulated order has been registered.</p>
+      <button class="btn btn-primary btn-block" id="checkout-done-btn">Back to Store</button>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toast-container" aria-live="polite"></div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-col brand-col">
+        <div class="brand-logo footer-logo">
+          <span class="logo-icon"><i class="fa-solid fa-bag-shopping"></i></span>
+          <span class="logo-text">Shop<strong>Sphere</strong></span>
+        </div>
+        <p class="footer-tagline">
+          Crafting delightful online shopping experiences with contemporary design, quality electronics, fashion, and accessories.
+        </p>
+        <div class="footer-socials">
+          <a href="#" aria-label="Github"><i class="fa-brands fa-github"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-title">Departments</h4>
+        <ul class="footer-links">
+          <li><a href="#products-section" onclick="filterByCategory('Electronics')">Electronics</a></li>
+          <li><a href="#products-section" onclick="filterByCategory('Clothing')">Clothing</a></li>
+          <li><a href="#products-section" onclick="filterByCategory('Accessories')">Accessories</a></li>
+          <li><a href="#products-section" onclick="filterByCategory('all')">All Products</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-title">Customer Service</h4>
+        <ul class="footer-links">
+          <li><a href="#home">Shipping & Delivery</a></li>
+          <li><a href="#home">30-Day Returns</a></li>
+          <li><a href="#home">Warranty Info</a></li>
+          <li><a href="#home">Support Center</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-title">Newsletter</h4>
+        <p class="newsletter-desc">Subscribe to receive exclusive drops and early product discounts.</p>
+        <form class="newsletter-form" onsubmit="event.preventDefault(); showToast('Subscribed to newsletter!', 'success');">
+          <input type="email" placeholder="Enter your email" required aria-label="Email address">
+          <button type="submit" class="btn btn-primary btn-sm">Join</button>
+        </form>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>&copy; 2026 ShopSphere Store. Built with HTML, CSS, and Vanilla JavaScript.</p>
+      <div class="footer-bottom-links">
+        <a href="#">Privacy Policy</a>
+        <span>&bull;</span>
+        <a href="#">Terms of Service</a>
+        <span>&bull;</span>
+        <a href="#">Security</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
